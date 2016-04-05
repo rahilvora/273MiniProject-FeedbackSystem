@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Favorites Organizer powered by Cloudant</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script>
+		function wordLoader(){
+			var words = ["Ambiguity", "Aerospace","maintenance",
+						"miscellaneous","occurrence","government",
+						"independent","fluorescent","embarrass"],
+					currentWord = words[Math.floor(words.length * Math.random())];
+			document.getElementById("currentWord").innerHTML = currentWord;
+		}
+
+	</script>
+</head>
+<body onload="wordLoader()">
+
+	<div class="container_fluid">
+		<p class="title">Quiz</p>
+		<form>
+			<div class="form-group main">
+		    	<label>Word 1:</label>
+				<label id="currentWord"></label>
+				<input type="text"/>
+		  	</div>
+			<div class="form-group">
+				<button class="btn btn-success">Next</button>
+			</div>
+		</form>	
+	</div>
+
+</body>
+</html>
