@@ -1,39 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Favorites Organizer powered by Cloudant</title>
+	<title><%=title%></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="stylesheet" href="/style/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="/scripts/SendData.js"/>
 	<script>
 		function wordLoader(){
 			var words = ["Ambiguity", "Aerospace","maintenance",
 						"miscellaneous","occurrence","government",
 						"independent","fluorescent","embarrass"],
 					currentWord = words[Math.floor(words.length * Math.random())];
-			document.getElementById("currentWord").innerHTML = currentWord;
+			//document.getElementById("currentWord").innerHTML = currentWord;
 		}
 
 	</script>
 </head>
-<body onload="wordLoader()">
+<body>
 
 	<div class="container_fluid">
-		<p class="title">Quiz</p>
+		<p class="title">SJSU Feedback System Spring 2016</p>
+		<p class="note">Rate your professor on scale of 1-5 with 5 being highest.</p>
+
 		<form>
-			<div class="form-group main">
-		    	<label>Word 1:</label>
-				<label id="currentWord"></label>
-				<input type="text"/>
-		  	</div>
 			<div class="form-group">
-				<button class="btn btn-success">Next</button>
+				<label>SJSU ID</label>
+				<input name="sjsuid" id="sjsuid" type="number" required/>
 			</div>
-		</form>	
+			<div class="form-group">
+				<label>Select Professor</label>
+				<select id="professor" class="form-control">
+					<option>Rakesh Ranjan</option>
+					<option>Shim Simon</option>
+					<option>N.Paul</option>
+					<option>Jerry Gao</option>
+					<option>M. Fayad</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>1. Assignments difficulty</label>
+				<select id="Assignment" class="form-control">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>2. Concept Clarity</label>
+				<select id="Concept" class="form-control">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>3. Technology covered</label>
+				<select id="Technology" class="form-control">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>4. Availability & Helpfulness</label>
+				<select id="Helpfulness" class="form-control">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-success" id="submitData">Submit Your Rating</button>
+				<span id="status"> Spme data</span>
+			</div>
+		</form>
 	</div>
+
 
 </body>
 </html>

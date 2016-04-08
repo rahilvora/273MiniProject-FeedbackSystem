@@ -8,3 +8,5 @@ applications:
   disk_quota: 1024M
   services:
   - Nodetest-cloudantNoSQLDB
+  - text-to-speech-service
+  command: node app.js

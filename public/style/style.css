@@ -204,15 +204,21 @@ a {
   color: #00aed1;
 }
 .container_fluid{
-	padding: 40%;
-	padding-top: 10%;
+	padding-top: 2%;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 .title{
 	text-align: center;
 	font-size: x-large;
+	margin-bottom: 2%;
+}
+.note{
+	margin-top: 1%;
+	font-size: medium;
 }
 .form-group{
-	text-align: center;
+
 
 }
 .main{

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+</head>
+<body>
+    <script>
+        $(function () {
+            // Create the chart
+            $('#container').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'SJSU Students feedback Spring 2016'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Percentage of Goodness'
+                    }
+
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y:.1f}%'
+                        }
+                    }
+                },
+
+
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Assignment Difficulty',
+                        y: <%=Assignment%>,
+                        drilldown: 'Assignment'
+                    }, {
+                        name: 'Concept Clarity',
+                        y: <%=Concept%>,
+                        drilldown: 'Chrome'
+                    }, {
+                        name: 'Techonologies Covered',
+                        y: <%=Technology%>,
+                        drilldown: 'Firefox'
+                    }, {
+                        name: 'Helpfulness and Availability',
+                        y: <%=Helpfulness%>,
+                        drilldown: 'Safari'
+                    }]
+                }]
+            });
+        });
+    </script>
+    <p>Assignment : <%=Assignment%></p>
+    <p>Concept : <%=Concept%></p>
+    <p>Technology : <%=Technology%></p>
+    <p>Helpfulnes : <%=Helpfulness%></p>
+    <form>
+        <div class="form-group">
+        <textarea style="width: 400px; height: 100px;" class="form-group">
+            Feedback for professor Shim for Spring 2016 semester is as follows
+            1. Assigment Difficulty <%=Assignment%>,
+            2. Concept Clarity <%= Concept%>
+            3. Technologies Covered <%= Technology%>
+            4. Helpfulness <%= Helpfulness%>
+         </textarea>
+        </div>
+    </form>
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>
