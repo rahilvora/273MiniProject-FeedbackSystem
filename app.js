@@ -344,10 +344,10 @@ function calculatePercentage(answer, callback){
 		TechnologyValue:0,
 		HelpfulnessValue:0
 	};
-	finalAnswer.AssignmentValue = (((answer.AssignmentValue)/(5*answer.length))*100).toFixed(2);
-	finalAnswer.ConceptValue = (((answer.ConceptValue)/(5*answer.length))*100).toFixed(2);
-	finalAnswer.TechnologyValue = (((answer.TechnologyValue)/(5*answer.length))*100).toFixed(2);
-	finalAnswer.HelpfulnessValue = (((answer.HelpfulnessValue)/(5*answer.length))*100).toFixed(2);
+	finalAnswer.AssignmentValue =Number((((answer.AssignmentValue)/(5*answer.length))*100).toFixed(2));
+	finalAnswer.ConceptValue = Number((((answer.ConceptValue)/(5*answer.length))*100).toFixed(2));
+	finalAnswer.TechnologyValue = Number((((answer.TechnologyValue)/(5*answer.length))*100).toFixed(2));
+	finalAnswer.HelpfulnessValue = Number((((answer.HelpfulnessValue)/(5*answer.length))*100).toFixed(2));
 	//return finalAnswer;
 	callback(finalAnswer);
 }
