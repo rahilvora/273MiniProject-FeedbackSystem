@@ -202,6 +202,9 @@ app.get('/paul', function(req,res) {
 		});
 	});
 });
+app.get('/admin',function(req,res){
+	res.render('admin.html');
+});
 app.get('/gao', function(req,res) {
 	var query ={
 		"selector": {
