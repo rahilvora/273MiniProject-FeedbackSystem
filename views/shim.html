@@ -66,9 +66,9 @@
         });
         });
 </script>
-<form>
+<form action = "http://nodeproject.mybluemix.net/speak">
     <div class="form-group">
-        <textarea style="width: 400px; height: 100px;" class="form-group">
+        <textarea style="width: 400px; height: 100px;" class="form-group" name="text">
             Feedback for professor Shim for Spring 2016 semester is as follows
             1. Assigment Difficulty <%=Assignment%>,
             2. Concept Clarity <%= Concept%>
@@ -76,6 +76,7 @@
             4. Helpfulness <%= Helpfulness%>
          </textarea>
     </div>
+    <button type="submit">Say it!</button>
 </form>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 </body>
